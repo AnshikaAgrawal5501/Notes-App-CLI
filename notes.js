@@ -8,11 +8,11 @@ function addNote(title, body) {
 
     const notes = loadNotes();
 
-    const findNote = notes.filter(function(note) {
+    const findNote = notes.find(function(note) {
         return note.title === title;
     });
 
-    if (findNote.length > 0) {
+    if (findNote !== undefined) {
         return false;
     }
 
@@ -41,12 +41,12 @@ function removeNote(title) {
 function readNote(title) {
     const notes = loadNotes();
 
-    const findNote = notes.filter(function(note) {
+    const findNote = notes.find(function(note) {
         return note.title === title;
     });
 
-    if (findNote.length > 0) {
-        console.log(findNote[0].body);
+    if (findNote) {
+        console.log(findNote.body);
         return true;
     } else {
         return false;

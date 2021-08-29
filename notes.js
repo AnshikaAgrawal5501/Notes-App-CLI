@@ -1,4 +1,5 @@
 const fs = require('fs');
+const chalk = require('chalk');
 
 function notes() {
     console.log("notes ...");
@@ -46,7 +47,7 @@ function readNote(title) {
     });
 
     if (findNote) {
-        console.log(findNote.body);
+        console.log('\n' + chalk.rgb(255, 136, 0)(findNote.body));
         return true;
     } else {
         return false;
@@ -57,7 +58,7 @@ function listNotes() {
     const notes = loadNotes();
 
     notes.forEach(function(note) {
-        console.log(`title: ${note.title}, body: ${note.body}`);
+        console.log(`${chalk.bold.rgb(255, 72, 126)("title :")} ${chalk.bold.magenta(note.title)}\n${chalk.bold.rgb(255, 139, 167)("body  :")} ${chalk.magentaBright(note.body)}\n`);
     });
 }
 

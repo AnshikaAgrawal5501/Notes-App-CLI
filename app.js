@@ -32,7 +32,7 @@ yargs.command({
         if (isAdded) {
             console.log(chalk.bold.green('Note successfully added.'));
         } else {
-            console.log(chalk.bold.red('Note already present'));
+            console.log(chalk.bold.red('Title already taken.'));
         }
     }
 });
@@ -51,9 +51,9 @@ yargs.command({
         const isRemoved = notes.removeNote(argv.title);
 
         if (isRemoved) {
-            console.log(chalk.bold.green.inverse('deleteing a note !'));
+            console.log(chalk.bold.green('deleteing a note !'));
         } else {
-            console.log(chalk.bold.red.inverse('Note not found !'));
+            console.log(chalk.bold.red('Note not found !'));
         }
     }
 });
@@ -84,7 +84,7 @@ yargs.command({
     command: 'list',
     description: 'List notes',
     handler: function() {
-        console.log('listing all notes !');
+        console.log(chalk.bold.rgb(255, 11, 85)('\nlisting all notes !\n'));
         notes.listNotes();
     }
 });

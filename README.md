@@ -56,6 +56,7 @@ node app.js add --help
 Add the required options with content.
 ```bash
 node app.js add --title="<note_title>" --body="<note_body>"
+```
 
 ### Delete
 

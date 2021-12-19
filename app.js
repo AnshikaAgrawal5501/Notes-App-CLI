@@ -1,11 +1,6 @@
-var validator = require('validator');
 const chalk = require('chalk');
 const notes = require('./notes');
 const yargs = require('yargs');
-
-// console.log(chalk.bold.cyan('Success'));
-
-// notes();
 
 yargs.command({
     command: 'add',
@@ -24,8 +19,6 @@ yargs.command({
     },
     handler: function(argv) {
         console.log('adding a new note !');
-        // console.log(`title: ${argv.title}`);
-        // console.log(`body: ${argv.body}`);
 
         const isAdded = notes.addNote(argv.title, argv.body);
 
@@ -69,7 +62,7 @@ yargs.command({
         },
     },
     handler: function(argv) {
-        // console.log('reading a note !');
+
         const isRead = notes.readNote(argv.title);
 
         if (isRead) {
